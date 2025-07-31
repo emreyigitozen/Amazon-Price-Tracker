@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import smtplib
-import time           #Kütüphaneler
+import time         
 import datetime
 import csv
 
@@ -16,10 +16,10 @@ soup1=BeautifulSoup(page.content,'html.parser')  #URL'nin html kodunu çektik.
 soup2=BeautifulSoup(soup1.prettify(),'html.parser') #URL'nin html kodunu daha düzenli hale getirir.
 title=soup2.find(id='productTitle').get_text() #Ürünün ismini çektik.
 price=soup2.find(class_='a-price-whole').get_text() #Ürünün fiyatını çektik.
-title=title.strip() #Gereksiz boşlukları temizledik.
+title=title.strip() 
 price=price.strip()
-bugun=datetime.date.today() #Bugünün tarihi
-header=['Title','Price','Date'] #Başlıklar
+bugun=datetime.date.today()
+header=['Title','Price','Date'] 
 data=[title,price,bugun] #Veriler
 
 
